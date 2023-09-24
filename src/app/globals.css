@@ -1,8 +1,3 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-}
-
 ::selection {
   background: #000000; /* WebKit/Blink Browsers */
   color: #fff;
@@ -34,10 +29,6 @@ body {
   background: #fff;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 h1 {
   font-weight: 300;
@@ -51,6 +42,8 @@ span, p, a, h2{
 }
 
 a {
+  color: inherit;
+  text-decoration: none;
   font-weight: 600;
 }
 
