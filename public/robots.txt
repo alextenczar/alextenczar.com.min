@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://alextenczar.com
+
+# Sitemaps
+Sitemap: https://alextenczar.com/sitemap.xml

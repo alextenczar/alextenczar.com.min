@@ -1,95 +1,30 @@
-import Image from 'next/image'
 import styles from './page.module.css'
+
+import dynamic from 'next/dynamic';
+
+const Clock = dynamic(() => import('./components/Clock'), { ssr: false });
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
+      <h1>Alex Tenczar</h1>
+      <div>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+          Hi, I&apos;m Alex &ndash; a Full Stack Developer. I graduated with my Master in Science in Information technology from the <a target="_blank" rel="noopener noreferrer" href="https://www.unh.edu/">University of New Hampshire</a>. In my free time I often find myself building web applications around modern SEO, accessibility, and security practices. When I&apos;m not building something, I enjoy travelling and taking photos. I&apos;m currently working as a contract developer for various Universities Across the United States.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      </div>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.notion.so/alextenczar/Resume-Alex-Tenczar-5d53c29076404671bcf568ec745feb03?pvs=4">Resume</a><br />
+      <div>
+      </div>
+      <div>
+        <h2>Get In Touch:</h2>
+        <a target="_blank" rel="noopener noreferrer" href="https://hcn2tnwe8l1.typeform.com/to/YlJlLq5w">EMAIL</a><br></br>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alexander-tenczar">Linkedin</a><br />
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/alextenczar">Github</a><br />
+        <a target="_blank" rel="noopener noreferrer" href="https://vsco.co/alextenczar/gallery">Photography</a><br />
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <span><span className={styles.locationDot}></span><p style={{ display: 'inline-block' }}>New Hampshire, USA</p><Clock timezone="America/New_York" /></span>
     </main>
   )
 }
