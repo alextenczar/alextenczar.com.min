@@ -1,9 +1,9 @@
 ::selection {
-  background: #000000; /* WebKit/Blink Browsers */
+  background: rgba(0, 0, 0, .99);
   color: #fff;
 }
 ::-moz-selection {
-  background: #000000; /* Gecko Browsers */
+  background: rgba(0, 0, 0, .99);
   color: #fff;
 }
 
@@ -32,11 +32,11 @@ body {
 
 h1 {
   font-weight: 300;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 span, p, a, h2{
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1rem;
   letter-spacing: 0px;
 }
@@ -45,6 +45,10 @@ a {
   color: inherit;
   text-decoration: none;
   font-weight: 600;
+}
+
+.local {
+  cursor:ne-resize;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,6 +1,5 @@
 .main {
-  padding: 3rem;
-  min-height: 100vh;
+  padding: 3rem 3rem 3rem 1rem;
   max-width: 1000px;
 }
 
@@ -11,7 +10,7 @@
   background-color: #32de84;
   margin-right: .5rem;
   border-radius: 50%;
-  animation: blink 2s infinite;
+  animation: blink 4s infinite;
 }
 
 .inline {display: inline-block;}
