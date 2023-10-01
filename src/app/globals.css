@@ -47,10 +47,6 @@ a {
   font-weight: 600;
 }
 
-.local {
-  cursor:ne-resize;
-}
-
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 10vw;
