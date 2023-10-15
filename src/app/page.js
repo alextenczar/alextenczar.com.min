@@ -19,7 +19,7 @@ export default function Home() {
 
       <div id="about">
         <p>
-          Hi, I&apos;m Alex &ndash; a full stack developer. I graduated with my master's degree in information technology from the <a target="_blank" rel="noopener noreferrer" href="https://www.unh.edu/">University of New Hampshire</a>. In my free time I often find myself building web applications around modern SEO, accessibility, and security practices. When I&apos;m not building something, I enjoy travelling and <a target="_blank" rel="noopener noreferrer" href="https://vsco.co/alextenczar/gallery">taking photos</a>. I&apos;m currently working as a contract developer for a few universities in the United States.
+          Hi, I&apos;m Alex &ndash; a full stack developer. I graduated with my master&apos;s degree in information technology from the <a target="_blank" rel="noopener noreferrer" href="https://www.unh.edu/">University of New Hampshire</a>. In my free time I often find myself building web applications around modern SEO, accessibility, and security practices. When I&apos;m not building something, I enjoy travelling and <a target="_blank" rel="noopener noreferrer" href="https://vsco.co/alextenczar/gallery">taking photos</a>. I&apos;m currently working as a contract developer for a few universities in the United States.
         </p>
       </div>
       <a target="_blank" rel="noopener noreferrer" href="https://www.notion.so/alextenczar/Resume-Alex-Tenczar-5d53c29076404671bcf568ec745feb03?pvs=4">My Resume</a><br />
