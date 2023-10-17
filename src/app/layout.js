@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Alex Tenczar',
   description: 'Full Stack Developer',
   keywords: ['Alex', 'Alexander', 'Tenczar', 'Alex Tenczar', 'Alexander Tenczar', 'Next.js', 'React', 'JavaScript', 'Developer', 'Full Stack'],
-  themeColor: 'white',
+  themeColor: '#ffffff',
   manifest: '/site.webmanifest',
   icons: {
     icon: [
