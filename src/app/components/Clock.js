@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { DateTime } from 'luxon';
+import { Noto_Sans_Mono } from 'next/font/google'
+const notoMono = Noto_Sans_Mono({ subsets: ['latin'] })
 
 const Clock = ({ timezone }) => {
     const [currentTime, setCurrentTime] = useState(DateTime.local().setZone(timezone));
@@ -22,11 +24,13 @@ const Clock = ({ timezone }) => {
     const formattedUtcString = `(UTC ${formattedUtcOffset}:00)`;
 
     return (
-        <div>
-            <time dateTime={formattedTime}>
-                {formattedTime}
-            </time>
-            <> {formattedUtcString}</>
+        <div className={notoMono.className}>
+            <span>
+                <time dateTime={formattedTime} >
+                    {formattedTime}
+                </time>
+                <> {formattedUtcString}</>
+            </span>
         </div>
     );
 };

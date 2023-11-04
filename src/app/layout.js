@@ -1,8 +1,11 @@
 import './globals.css'
-import { Noto_Sans_Mono } from 'next/font/google'
+import { Noto_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 
-const inter = Noto_Sans_Mono({ subsets: ['latin'] })
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
 
 export const metadata = {
   title: 'Alex Tenczar',
@@ -25,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}<Analytics /></body>
+      <body className={notoSans.className}>{children}<Analytics /></body>
     </html>
   )
 }

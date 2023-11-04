@@ -1,16 +1,6 @@
 .main {
-  padding: 3rem 3rem 1rem 3rem;
+  padding: 2rem 3rem 1rem 3rem;
   max-width: 1000px;
-}
-
-.locationDot {
-  display: inline-block;
-  width: .5rem;
-  height: .5rem;
-  background-color: #32de84;
-  margin-right: .5rem;
-  border-radius: 50%;
-  animation: blink 4s infinite;
 }
 
 .inline {display: inline-block;}
@@ -23,20 +13,5 @@
   
   .content {
     padding: 4rem;
-  }
-}
-
-
-@keyframes blink {
-  0% {
-      opacity: 1
-  }
-
-  50% {
-      opacity: .2
-  }
-
-  to {
-      opacity: 1
   }
 }

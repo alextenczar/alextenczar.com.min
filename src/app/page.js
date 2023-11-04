@@ -1,3 +1,4 @@
+import Weather from './components/Weather';
 import styles from './page.module.css'
 import dynamic from 'next/dynamic';
 const Clock = dynamic(() => import('./components/Clock'), { ssr: false });
@@ -27,10 +28,11 @@ export default function Home() {
       </div>
       <div id="contact">
         <h2>Connect with me on</h2>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alexander-tenczar">Linkedin</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/alextenczar">Github</a>, or send me an <a target="_blank" rel="noopener noreferrer" href="https://hcn2tnwe8l1.typeform.com/to/YlJlLq5w">email</a>.
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alexander-tenczar">LinkedIn</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/alextenczar">GitHub</a><span>, or send me an </span><a target="_blank" rel="noopener noreferrer" href="https://hcn2tnwe8l1.typeform.com/to/YlJlLq5w">email</a>.
       </div>
 
-      <span><a target="_blank" rel="noopener noreferrer" className='local' href={`https://www.google.com/maps/search/${encodedLocal}`} style={{ display: 'inline-block' }}>{local} </a></span>
+      <span><a target="_blank" rel="noopener noreferrer" className='local' href={`https://www.google.com/maps/search/${encodedLocal}`} style={{ display: 'inline-block' }}>{local}</a></span>
+      <br></br><Weather lat='43.127' lon='-71.709' />
       <br></br><Clock timezone="America/New_York" />
     </main >
   )
