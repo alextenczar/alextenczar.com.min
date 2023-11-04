@@ -10,7 +10,7 @@ export default function Weather({ lat, lon }) {
     let { data, error } = useSWR(`/api/weather?lat=${lat}&lon=${lon}`, fetcher)
 
     if (error) return
-    if (!data) return <span>&nbsp;</span>
+    if (!data) return <span className="loading"></span>
     data = data.response
     let temp = data.main.temp
     let desc = data.weather[0].icon
