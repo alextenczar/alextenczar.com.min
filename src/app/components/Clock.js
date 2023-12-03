@@ -13,8 +13,10 @@ const Clock = ({ timezone, timeFormat }) => {
     }
 
     let format = 'hh'
+    let amPm = 'a'
     if (timeFormat === '24hr') {
         format = 'HH'
+        amPm = ''
     }
 
     const [currentTime, setCurrentTime] = useState(DateTime.local().setZone(timezone));
@@ -29,7 +31,7 @@ const Clock = ({ timezone, timeFormat }) => {
     }, [timezone]);
 
 
-    const formattedTime = currentTime.toFormat(`${format}:mm:ss a`);
+    const formattedTime = currentTime.toFormat(`${format}:mm:ss ${amPm}`);
 
     // Format UTC offset in (UTC +/-HH:MM) format
     const formattedUtcOffset = utcOffset > 0 ? `+ ${String(utcOffset).padStart(2, '0')}` : String(utcOffset).padStart(2, '0');
