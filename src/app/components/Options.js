@@ -69,11 +69,11 @@ const Options = () => {
             </button>
             <div className={`options ${isHidden ? 'hidden' : 'visble'}`}>
                 <button onClick={() => {
-                    router.push(pathname + '?' + createQueryString('timeFormat', oppTimeFormat))
-                }}><span className={`${twelveActive}`}>12hr</span>&nbsp;<span className={`${twentyFourActive}`}>24hr</span></button><br />
-                <button onClick={() => {
                     router.push(pathname + '?' + createQueryString('tempUnit', oppTempUnit))
-                }}><span className={`${fActive}`}>°F</span>&nbsp;<span className={`${cActive}`}>°C</span></button>
+                }}><span className={`${fActive}`}>°F</span>&nbsp;<span className={`${cActive}`}>°C</span></button><br />
+                <button onClick={() => {
+                    router.push(pathname + '?' + createQueryString('timeFormat', oppTimeFormat))
+                }}><span className={`${twelveActive}`}>12hr</span>&nbsp;<span className={`${twentyFourActive}`}>24hr</span></button>
             </div>
         </div >
     );
