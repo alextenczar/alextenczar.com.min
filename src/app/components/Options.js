@@ -44,6 +44,8 @@ const Options = () => {
         oppTempUnit = 'c'
     } else {
         oppTempUnit = 'f'
+        fActive = ''
+        cActive = 'active'
     }
 
     let twelveActive = ''
@@ -55,6 +57,8 @@ const Options = () => {
         oppTimeFormat = '24hr'
     } else {
         oppTimeFormat = '12hr'
+        twelveActive = ''
+        twentyFourActive = 'active'
     }
 
     return (
