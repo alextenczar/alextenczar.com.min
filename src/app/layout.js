@@ -1,4 +1,4 @@
-import './globals.css'
+import './globals.scss'
 import { Noto_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 

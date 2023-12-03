@@ -30,6 +30,10 @@ body {
   background: #fff;
 }
 
+.temp-unit {
+  text-transform: uppercase;
+}
+
 h1 {
   font-weight: 400;
   font-size: 3.5rem;
@@ -48,6 +52,63 @@ span, p, a, h2{
   content: "\002E""\002E""\002E""\002E""\002E"; /* ascii code for the ellipsis character */
   width: 0px;
 
+}
+
+.options-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.options.hidden {
+  display: none;
+}
+
+.options-button {
+  order: 2;
+}
+
+.options {
+  order: 1;
+}
+
+.options button:first-child {
+  margin-bottom: 1rem;
+}
+
+.options {
+  background: rgb(255, 255, 255, .5);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 6px;
+  outline: 1px solid rgb(0, 0, 0, .125);
+}
+
+.options button span {
+  text-decoration: underline;
+}
+
+.options button span:not(.active) {
+  color: rgb(0, 0, 0, .5);
+  text-decoration: none;
+}
+
+.options button span.active {
+  text-decoration: none;
+}
+
+footer {
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+button {
+  font-weight: 700;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
 }
 
 @media (max-width: 500px) {
@@ -82,6 +143,17 @@ a {
   a:hover {
     text-decoration: underline;
   }
+  button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .options button:hover {
+    text-decoration: none;
+    span:not(.active) {
+      text-decoration: underline;
+    }
+  }
+  
 }
 
 @keyframes ellipsis {

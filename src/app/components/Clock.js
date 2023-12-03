@@ -3,9 +3,20 @@
 import { useState, useEffect } from 'react';
 import { DateTime } from 'luxon';
 import { Noto_Sans_Mono } from 'next/font/google'
+import { useSearchParams } from 'next/navigation'
 const notoMono = Noto_Sans_Mono({ subsets: ['latin'] })
 
-const Clock = ({ timezone }) => {
+const Clock = ({ timezone, timeFormat }) => {
+    const searchParams = useSearchParams()
+    if (searchParams.get('timeFormat')) {
+        timeFormat = searchParams.get('timeFormat')
+    }
+
+    let format = 'hh'
+    if (timeFormat === '24hr') {
+        format = 'HH'
+    }
+
     const [currentTime, setCurrentTime] = useState(DateTime.local().setZone(timezone));
     const utcOffset = currentTime.offset / 60; // Get the UTC offset in hours
 
@@ -17,10 +28,11 @@ const Clock = ({ timezone }) => {
         return () => clearInterval(interval);
     }, [timezone]);
 
-    const formattedTime = currentTime.toFormat('hh:mm:ss a');
+
+    const formattedTime = currentTime.toFormat(`${format}:mm:ss a`);
 
     // Format UTC offset in (UTC +/-HH:MM) format
-    const formattedUtcOffset = utcOffset > 0 ? `+${String(utcOffset).padStart(2, '0')}` : String(utcOffset).padStart(2, '0');
+    const formattedUtcOffset = utcOffset > 0 ? `+ ${String(utcOffset).padStart(2, '0')}` : String(utcOffset).padStart(2, '0');
     const formattedUtcString = `(UTC ${formattedUtcOffset}:00)`;
 
     return (

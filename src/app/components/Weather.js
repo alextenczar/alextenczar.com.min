@@ -3,8 +3,13 @@
 import useSWR from 'swr'
 import { Noto_Sans_Mono } from 'next/font/google'
 const notoMono = Noto_Sans_Mono({ subsets: ['latin'] })
+import { useSearchParams } from 'next/navigation'
 
-export default function Weather({ lat, lon }) {
+export default function Weather({ lat, lon, tempUnit }) {
+    const searchParams = useSearchParams()
+    if (searchParams.get('tempUnit')) {
+        tempUnit = searchParams.get('tempUnit')
+    }
 
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
     let { data, error } = useSWR(`/api/weather?lat=${lat}&lon=${lon}`, fetcher)
@@ -13,6 +18,12 @@ export default function Weather({ lat, lon }) {
     if (!data) return <span className="loading"></span>
     data = data.response
     let temp = data.main.temp
+
+    if (tempUnit === 'c') {
+        temp = Math.round(temp - 273.15);
+    } else if (tempUnit === 'f') {
+        temp = Math.round(temp * 9 / 5 - 459.67);
+    }
     let desc = data.weather[0].icon
 
     switch (desc) {
@@ -57,7 +68,7 @@ export default function Weather({ lat, lon }) {
     return (
         <span>
             <span className={notoMono.className}>
-                {Math.round(temp)}</span>&deg;F {desc}
+                {Math.round(temp)}</span>&deg;<span className='temp-unit'>{tempUnit}</span> {desc}
         </span>
     );
 };

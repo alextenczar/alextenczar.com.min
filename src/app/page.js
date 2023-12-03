@@ -1,4 +1,5 @@
 import Weather from './components/Weather';
+import Options from './components/Options';
 import styles from './page.module.css'
 import dynamic from 'next/dynamic';
 const Clock = dynamic(() => import('./components/Clock'), { ssr: false });
@@ -32,8 +33,12 @@ export default function Home() {
       </div>
 
       <span><a target="_blank" rel="noopener noreferrer" className='local' href={`https://www.google.com/maps/search/${encodedLocal}`} style={{ display: 'inline-block' }}>{local}</a></span>
-      <br></br><Weather lat='43.127' lon='-71.709' />
-      <br></br><Clock timezone="America/New_York" />
+      <br></br><Weather lat='43.127' lon='-71.709' tempUnit='c' />
+      <br></br><Clock timezone="America/New_York" timeFormat='12hr' />
+
+      <footer className={styles.footer}>
+        <Options />
+      </footer>
     </main >
   )
 }
