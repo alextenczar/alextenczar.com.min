@@ -125,6 +125,18 @@ a {
   font-weight: 600;
 }
 
+.hover-image {
+  display: none;
+  text-indent: -100%;
+  overflow: hidden;
+}
+
+.hover-container {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -139,6 +151,7 @@ a {
     font-size: 10vw;
   }
 }
+
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -155,7 +168,13 @@ a {
       text-decoration: underline;
     }
   }
-  
+  .hover-image {
+    position: fixed;
+    height: auto;
+    pointer-events: none; 
+    border-radius: 6px;
+    display: inline;
+  }
 }
 
 @keyframes ellipsis {
