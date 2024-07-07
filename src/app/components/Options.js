@@ -64,7 +64,7 @@ const Options = () => {
     return (
         <div className='options-container'>
 
-            <button class='options-button' onClick={handleClick}>
+            <button className='options-button' onClick={handleClick}>
                 Options
             </button>
             <div className={`options ${isHidden ? 'hidden' : 'visble'}`}>

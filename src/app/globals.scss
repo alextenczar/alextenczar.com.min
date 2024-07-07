@@ -182,3 +182,32 @@ a {
     width: 2rem;    
   }
 }
+
+.locationDot {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  background-color: #32de84;
+  margin-left: .5rem;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+.local {
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1
+  }
+
+  50% {
+      opacity: 0
+  }
+
+  100% {
+      opacity: 1
+  }
+}
